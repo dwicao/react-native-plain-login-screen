@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {
     Text,
-    Easing,
+    Image,
     Animated,
     StyleSheet,
     TouchableOpacity,
 } from 'react-native';
+import imgLoading from '../images/loading.gif';
 import { myHeight, myWidth } from '../utils';
 import * as colors from '../colors';
 
@@ -26,26 +27,22 @@ class MyButton extends Component {
 
         this.setState({ isLoading: true });
 
-        Animated.timing(
-            this.buttonAnimated,
-            {
-                toValue: 1,
-                duration: 200,
-                easing: Easing.linear,
-            }
-        ).start();
+        this._animation(this.buttonAnimated, 1, 200);
 
         setTimeout(() => {
             this.setState({ isLoading: false });
-            Animated.timing(
-                this.buttonAnimated,
-                {
-                    toValue: 0,
-                    duration: 200,
-                    easing: Easing.linear,
-                }
-            ).start();
+            this._animation(this.buttonAnimated, 0, 200);
         }, 2000);
+    }
+
+    _animation(obj, toValue, duration) {
+        Animated.timing(
+            obj,
+            {
+                toValue,
+                duration,
+            }
+        ).start();
     }
 
     render() {
@@ -62,7 +59,7 @@ class MyButton extends Component {
                     style={styles.btn}
                 >
                     { this.state.isLoading
-                        ? <Text style={styles.txt}>H</Text>
+                        ? <Image source={imgLoading} style={styles.imgLoading}/>
                         : <Text style={styles.txt}>Sign In</Text>
                     }
                 </TouchableOpacity>
@@ -83,6 +80,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         fontWeight: 'bold',
         color: colors.BASIC,
+    },
+    imgLoading: {
+        width: myHeight * 0.08,
+        height: myHeight * 0.08,
     },
 });
 
