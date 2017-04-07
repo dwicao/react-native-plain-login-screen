@@ -4,7 +4,10 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+		"test": "jest",
+		"android-apk": "npm run android-release && npm run android-signer",
+		"android-release": "cd android && ./gradlew assembleRelease",
+		"android-signer": "cd android/app/build/outputs/apk/ && jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android app-release-unsigned.apk androiddebugkey"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.6",

@@ -26,7 +26,6 @@ class MyButton extends Component {
         if (this.state.isLoading) return;
 
         this.setState({ isLoading: true });
-
         this._animation(this.buttonAnimated, 1, 200);
 
         setTimeout(() => {
