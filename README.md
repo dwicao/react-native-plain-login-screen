@@ -1,7 +1,6 @@
 # react-native-plain-login-screen
 ![demo](https://raw.githubusercontent.com/dwicao/react-native-plain-login-screen/master/demo.gif)
-> note: it lags due to .gif recorder app
-> it works smoothly on devices
+> note: It lags due to .gif recorder app. It works smoothly on devices.
 
 ## Install on your machine
 * `git clone https://github.com/dwicao/react-native-plain-login-screen.git`
