@@ -15,6 +15,7 @@ class MyTextInput extends Component {
                     placeholder={this.props.placeholder}
                     autoCapitalize='none'
                     autoCorrect={false}
+                    underlineColorAndroid='transparent'
                     secureTextEntry={this.props.secureTextEntry}
                     style={styles.textInput}
                 />
