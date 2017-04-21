@@ -5,7 +5,7 @@ import {
     TextInput,
     StyleSheet,
 } from 'react-native';
-import { myWidth, myHeight } from '../utils';
+import { myWidth, myHeight } from '../../utils';
 
 class MyTextInput extends Component {
     render() {

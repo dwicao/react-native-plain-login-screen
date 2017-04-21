@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
-import imgLogo from '../images/logo.png';
-import * as colors from '../colors';
+import imgLogo from '../../images/logo.png';
+import * as colors from '../../colors';
 
 const Logo = (props) => (
     <Image source={imgLogo} style={styles.img}/>

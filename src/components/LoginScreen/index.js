@@ -3,9 +3,9 @@ import { View, StyleSheet } from 'react-native';
 import Logo from './Logo';
 import MyTextInput from './MyTextInput';
 import MyButton from './MyButton';
-import { diff } from '../utils';
+import { diff } from '../../utils';
 
-class App extends Component {
+class LoginScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+export default LoginScreen;

@@ -6,9 +6,10 @@ import {
     StyleSheet,
     TouchableOpacity,
 } from 'react-native';
-import imgLoading from '../images/loading.gif';
-import { myHeight, myWidth } from '../utils';
-import * as colors from '../colors';
+import { Actions } from 'react-native-router-flux';
+import imgLoading from '../../images/loading.gif';
+import { myHeight, myWidth } from '../../utils';
+import * as colors from '../../colors';
 
 class MyButton extends Component {
     constructor(props) {
@@ -32,6 +33,8 @@ class MyButton extends Component {
             this.setState({ isLoading: false });
             this._animation(this.buttonAnimated, 0, 200);
         }, 2000);
+
+        setTimeout(() => Actions.homeScreen(), 2300);
     }
 
     _animation(obj, toValue, duration) {
