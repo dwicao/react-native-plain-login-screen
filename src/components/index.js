@@ -8,8 +8,8 @@ class App extends React.Component {
     return (
       <Router>
         <Scene key="root" hideNavBar>
-          <Scene key="loginScreen" component={LoginScreen} initial/>
-          <Scene key="homeScreen" component={HomeScreen}/>
+          <Scene key="loginScreen" component={LoginScreen}/>
+          <Scene key="homeScreen" component={HomeScreen} initial/>
         </Scene>
       </Router>
     )

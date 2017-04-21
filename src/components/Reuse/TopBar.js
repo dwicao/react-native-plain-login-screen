@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import * as colors from '../../colors';
 
 class TopBar extends Component {
@@ -12,10 +13,12 @@ class TopBar extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={this.props.onPressBack}>
-          <Text>Back</Text>
+          <Icon name="md-arrow-round-back" size={30} color={colors.BASIC} />
         </TouchableOpacity>
-        <Text>Home</Text>
-        <Text>Icon</Text>
+        <Text style={styles.title}>Home</Text>
+        <TouchableOpacity onPress={this.props.onPressBack}>
+          <Icon name="md-menu" size={30} color={colors.BASIC} />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -26,9 +29,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: 40,
-    paddingHorizontal: 10,
+    height: '6.5%',
+    paddingHorizontal: '3%',
     backgroundColor: colors.PRIMARY,
+  },
+  title: {
+    color: colors.BASIC,
+    fontWeight: 'bold',
   },
 });
 
