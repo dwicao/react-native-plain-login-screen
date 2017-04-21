@@ -22,7 +22,11 @@ class Home extends Component {
   render() {
     return (
       <View style={{ flex: 1, marginTop: diff }}>
-        <TopBar onPressBack={this.onPress}/>
+        <TopBar
+          title="Home"
+          onPressBack={this.onPress}
+          leftIconName="md-arrow-round-back"
+        />
         <Text>Ini adalah Home</Text>
         <TouchableOpacity onPress={this.onPress}>
           <Text>Back</Text>

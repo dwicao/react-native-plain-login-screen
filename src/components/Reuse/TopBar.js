@@ -10,13 +10,15 @@ import * as colors from '../../colors';
 
 class TopBar extends Component {
   render() {
+    const { onPressBack, leftIconName, title } = this.props;
+
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this.props.onPressBack}>
-          <Icon name="md-arrow-round-back" size={30} color={colors.BASIC} />
+        <TouchableOpacity onPress={onPressBack}>
+          <Icon name={leftIconName} size={30} color={colors.BASIC} />
         </TouchableOpacity>
-        <Text style={styles.title}>Home</Text>
-        <TouchableOpacity onPress={this.props.onPressBack}>
+        <Text style={styles.title}>{title}</Text>
+        <TouchableOpacity onPress={onPressBack}>
           <Icon name="md-menu" size={30} color={colors.BASIC} />
         </TouchableOpacity>
       </View>
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
 
 TopBar.propTypes = {
   onPressBack: PropTypes.func.isRequired,
+  leftIconName: PropTypes.string.isRequired,
 };
 
 export default TopBar;
